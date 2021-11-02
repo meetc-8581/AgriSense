@@ -1,0 +1,47 @@
+.current-data-heading {
+  margin: 10px 90px;
+}
+
+.current-data-heading span {
+  font-size: large;
+  font-weight: 500;
+}
+
+.current-data-container {
+  margin: 5px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.current-data-container :hover {
+  transform: scale(1.1);
+}
+
+.current-data-card {
+  max-height: 130px;
+  width: 274px;
+  margin: 5px 24px;
+  padding: 0 4px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.current-data-card :hover {
+  transform: scale(1);
+}
+
+@media (max-width: 1430px) {
+  .current-data-card {
+    margin: 20px 50px 0px 100px;
+  }
+}
+
+.current-data-card-lable {
+  font-weight: 700;
+}

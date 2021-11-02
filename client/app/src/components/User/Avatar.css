@@ -1,0 +1,31 @@
+.avatar-button-container {
+  margin-right: 40px;
+}
+
+.avatar-button-container button {
+  background-color: yellowgreen;
+  border-radius: 5px;
+  width: 60px;
+}
+
+.avatar-button-container a {
+  transition: all 0.3 ease 0s;
+}
+
+.avatar-button-container a:hover {
+  color: #0088a9;
+}
+
+.drop-down-active {
+  display: inline-block;
+  position: absolute;
+  background-color: white;
+  top: 50px;
+  right: 38px;
+  z-index: 5;
+  border: 1px solid black;
+}
+
+.drop-down-active ul {
+  list-style: none;
+}

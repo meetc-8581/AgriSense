@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #00000040;
+  height: 65px;
+  padding: 0px 60px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  width: 50px;
+}
+
+.nav__links {
+  list-style: none;
+  font-weight: 500;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3 ease 0s;
+}
+
+.nav__links li a:hover {
+  color: rgb(21, 175, 91);
+}
+/* 
+.cta button {
+  padding: 5px 20px;
+  background-color: rgb(35, 223, 120);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3 ease 0s;
+  margin-right: 5px;
+}
+.cta button:hover {
+  background-color: rgb(30, 184, 99);
+} */
