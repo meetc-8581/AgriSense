@@ -63,7 +63,8 @@ A sequence diagram shows, as parallel vertical lines, different processes or obj
 
 ## Selection of Hardware and Justification
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Arduino%20Nano.jpg" width="400"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Arduino%20Nano.jpg" width="300"></img>
+
 Arduino Nano is a small, compatible, flexible Microcontroller board. It is based on
 ATmega328p. Arduino Nano is simply a smaller version of Arduino UNO, thus both has
 almost same functionalities. It has an operating voltage of 5V, however, the input voltage can
@@ -71,23 +72,28 @@ vary from 7 to 12V.Arduino Nano Pin-out contains 14 digital pins, 8 Analogue Pin
 Pins & 6 Power Pins. Each of these Digital & Analogue Pins are assigned with multiple
 functions but their main function is to be configured as input or output.
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Node%20MCU.jpg" width="400"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Node%20MCU.jpg" width="300"></img>
+
 Node MCU is a low cost open source development platform with built in Wi-Fi compatibility. It is capable of several digital and analogue input operations. It has also the capability of
 working as a Wi-Fi hotspot as well as client. It can also be used to connect to a server.
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/LoRa%20Module.jpg" width="400"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/LoRa%20Module.jpg" width="300"></img>
+
 LoRa Modules (short for long range) is a spread spectrum modulation technique derived from chirp spread spectrum (CSS) technology. LoRa devices and wireless radio frequency
 technology is a long range, low power wireless platform that has become the de facto
 technology for Internet of Things (IOT) networks worldwide. LoRa devices and the open LoRa WAN® protocol enable smart IOT applications that solve some of the biggest challenges facing our planet: energy management, natural resource reduction, pollution control, infrastructure
 efficiency, disaster prevention, and more.
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/DHT11%20Sensor.jpg" width="400"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/DHT11%20Sensor.jpg" width="300"></img>
+
 DHT11 Sensor
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/DS18B20%20Probe%20Sensor.jpg" width="400"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/DS18B20%20Probe%20Sensor.jpg" width="300"></img>
+
 DS18B20 Sensor
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Capacitive%20soil%20moisture%20sensor%20V2..jpg" width="400"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Capacitive%20soil%20moisture%20sensor%20V2..jpg" width="300"></img>
+
 Capacitive soil moisture sensor V2.0
 
 ## System Implementation
@@ -99,17 +105,17 @@ The figure above shows the diagram of implementation of the system
 
 ### Sensor Implementation
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Buried%20Back.png" width="800"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Buried%20Back.png" width="700"></img>
 The Figures above illustrates the Housing in which all the sensors will be mounted. This housing is used to protect the sensors form weather and extreme climate.This probe will be buried in to the ground so as to collect moisture and temperature data
 from multiple levels in the soil.
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Full%20Front.png" width="800"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Full%20Front.png" width="700"></img>
 The figure above shows the probe body with the LoRa antenna nd the capacitive pads on the cylindrical wall of the probe.
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Neck.png" width="900"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Neck.png" width="700"></img>
 The figure above shows the probe’s open able neck which can be used to troubleshoot problems, change faulty sensors, change faulty components, and change battery if needed.
 
-<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Front%20Close-up.png" width="800"></img>
+<img src="https://github.com/meetc-8581/AgriSense/blob/master/Images/Probe%20Front%20Close-up.png" width="700"></img>
 The above figure illustrates the solar panel and rain sensor fitted on the surface of the probe to sense rain and recharge lithium-ion battery inside the probe which is used to power the probe.
 
 ## Screen shots and User manual
