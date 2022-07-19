@@ -19,7 +19,9 @@ function Login() {
         password,
       };
 
-      await axios.post("//localhost:5000/api/login", loginData);
+      await axios.post("//localhost:5000/api/login", loginData, {
+        withCredentials: true,
+      });
       await getLoggedIn();
       history.push("/");
     } catch (err) {

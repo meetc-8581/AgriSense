@@ -3,8 +3,8 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
 const { User, validateUser } = require("../models/userModel");
+const { Farm, validateFarm } = require("../models/farmModel");
 const auth = require("../middleware/auth");
-const { Farm } = require("../models/farmModel");
 
 router.post("/", async (req, res) => {
   const { error } = validateUser(req.body);

@@ -1,3 +1,11 @@
 .weather-master-container {
   background: #f2f9f0;
+ 
+}
+.weather-data-container {
+  margin: 5px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: all 0.2s ease-in-out; 
 }
