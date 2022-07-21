@@ -12,7 +12,6 @@ router.get("/sortdata", auth, async (req, res) => {
   const deviceId = req.query.deviceId;
 
   let startDate = req.query.startDate;
-  console.log(startDate);
 
   const data = await Data.find({
     // deviceId: deviceId,
@@ -27,10 +26,10 @@ router.get("/sortdata", auth, async (req, res) => {
 
 router.get("/getbydevice", auth, async (req, res) => {
   let currentDate = new Date("2021-04-25T20:00:35.063Z");
-  // console.log(currentDate);
+
   let pastDate = new Date("2021-04-14T20:00:35.063Z");
   pastDate.setDate(currentDate.getDate() - parseInt(req.query.days));
-  // console.log(pastDate);
+
   let queryData = await Data.aggregate([
     {
       $match: { deviceId: parseInt(req.query.deviceId) },
@@ -54,8 +53,6 @@ router.get("/getbydevice", auth, async (req, res) => {
       },
     },
   ]);
-
-  // console.log(queryData);
 
   let moistureDataAvgArr = [];
   let tempProbeDataAvgArr = [];
@@ -147,10 +144,10 @@ router.get("/getbydevice", auth, async (req, res) => {
     });
   }
 
-  console.log("MOISTURE Avg Array", moistureDataAvgArr);
-  console.log("TEMPERATURE Avg Array", tempProbeDataAvgArr);
+  // console.log("MOISTURE Avg Array", moistureDataAvgArr);
+  // console.log("TEMPERATURE Avg Array", tempProbeDataAvgArr);
 
-  console.log("queryserved", req.query.deviceId);
+  // console.log("queryserved", req.query.deviceId);
 
   let responseAvg = {
     tempProbeDataAvgArr: tempProbeDataAvgArr,
@@ -214,7 +211,7 @@ router.get("/latestdata", auth, async (req, res) => {
       ].val,
   };
 
-  console.log(latestDataToSend);
+  // console.log(latestDataToSend);
   res.send(latestDataToSend);
 });
 
@@ -243,7 +240,7 @@ router.post("/send", async (req, res) => {
       },
       { upsert: true }
     );
-    console.log(req.body);
+    // console.log(req.body);
     res.status(200).send(result);
   } catch (err) {
     console.error("error", err);

@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
-    console.log(user);
+    // console.log(user);
 
     const farms = await Farm.find({ user: req.user._id });
     res.send(farms);

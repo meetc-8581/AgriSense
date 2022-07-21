@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 function AddFarm() {
   const [farmName, setName] = useState("");
@@ -25,7 +26,7 @@ function AddFarm() {
         deviceId,
       };
 
-      await axios.post("http://localhost:5000/api/farm", farmData);
+      await axios.post("/farm", farmData);
       history.push("/dashboard");
     } catch (err) {
       console.error(err);
@@ -85,9 +86,9 @@ function AddFarm() {
       </div>
       <div className="page-title">
         Having doubts?
-        <a style={{ textDecoration: "underline", color: "blue" }} href="login">
+        <Link style={{ textDecoration: "underline", color: "blue" }} to="login">
           Contact us
-        </a>
+        </Link>
       </div>
     </div>
   );

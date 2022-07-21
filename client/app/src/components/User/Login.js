@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,7 +20,9 @@ function Login() {
         password,
       };
 
-      await axios.post("//localhost:5000/api/login", loginData);
+      await axios.post("login", loginData, {
+        withCredentials: true,
+      });
       await getLoggedIn();
       history.push("/");
     } catch (err) {
@@ -61,18 +64,20 @@ function Login() {
       </div>
       <div className="page-title">
         Forgot password?
-        <a style={{ textDecoration: "underline", color: "blue" }} href="/login">
-          {" "}
+        <Link
+          style={{ textDecoration: "underline", color: "blue" }}
+          to="/login"
+        >
           Reset
-        </a>
+        </Link>
         <br></br>
         Don't have an account?
-        <a
+        <Link
           style={{ textDecoration: "underline", color: "blue" }}
-          href="/register"
+          to="/register"
         >
           Sign up
-        </a>
+        </Link>
       </div>
     </div>
   );

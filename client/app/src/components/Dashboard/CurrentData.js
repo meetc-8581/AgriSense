@@ -9,7 +9,7 @@ function CurrentData(props) {
 
   let query = "?deviceId=" + farmData.deviceId[0].toString();
 
-  let str = "http://localhost:5000/data/latestdata" + query;
+  let str = "/data/latestdata" + query;
 
   async function getCurrentData() {
     const currentRes = await axios.get(str);

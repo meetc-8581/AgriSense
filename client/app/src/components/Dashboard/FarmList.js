@@ -15,7 +15,7 @@ function FarmList() {
   });
 
   async function getFarmList() {
-    const farmRes = await axios.get("http://localhost:5000/api/farm");
+    const farmRes = await axios.get("/farm");
 
     setFarmList(farmRes.data);
     // console.log(farmRes.data);

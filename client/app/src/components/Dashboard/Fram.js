@@ -12,7 +12,7 @@ function Farm(props) {
   let queryDevice = "?deviceId=" + farmData.deviceId[0].toString();
   let queryDays = "&days=" + props.dateSelected.toString();
 
-  let str = "http://localhost:5000/data/getbydevice" + queryDevice + queryDays;
+  let str = "/data/getbydevice" + queryDevice + queryDays;
 
   // console.log(str);
 

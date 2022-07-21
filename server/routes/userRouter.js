@@ -3,8 +3,8 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
 const { User, validateUser } = require("../models/userModel");
+const { Farm, validateFarm } = require("../models/farmModel");
 const auth = require("../middleware/auth");
-const { Farm } = require("../models/farmModel");
 
 router.post("/", async (req, res) => {
   const { error } = validateUser(req.body);
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
 router.get("/userfarm", auth, async (req, res) => {
   try {
     let user = await User.findById(req.user._id).populate("farms");
-    console.log(user);
+    // console.log(user);
 
     let farms = await Farm.find({ user: req.user._id });
     res.status(200).send(farms);

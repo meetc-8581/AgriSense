@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { MemoryRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/User/Login";
 import Register from "./components/User/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -15,7 +15,7 @@ function Router() {
   const { loggedIn } = useContext(AuthContext);
 
   return (
-    <BrowserRouter>
+    <MemoryRouter>
       <Navbar />
       <Switch>
         <Route exact path="/">
@@ -48,7 +48,7 @@ function Router() {
           </>
         )}
       </Switch>
-    </BrowserRouter>
+    </MemoryRouter>
   );
 }
 

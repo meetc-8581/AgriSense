@@ -1,8 +1,9 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const config = require("config");
+// const config = require("config");
 const Farm = require("./farmModel");
+require("dotenv").config();
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -32,17 +33,15 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.generateAuthToken = function () {
   return jwt.sign(
     { _id: this._id, isAdmin: this.isAdmin },
-    config.get("jwtPrivateKey")
+    process.env.JWT_SECRET
   );
 };
 
 async function addUserFarm(userId, farmId, farmName) {
-  console.log(userId);
   const user = await User.findById(userId);
   user.farms.push({ farmId: farmId, farmName: farmName });
 
   user.save();
-  console.log(user);
 }
 
 const User = mongoose.model("User", userSchema);

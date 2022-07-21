@@ -3,25 +3,37 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
-const config = require("config");
+// const config = require("config");
 const router = express.Router();
 const { User } = require("../models/userModel");
 const auth = require("../middleware/auth");
+require("dotenv").config();
 
 router.post("/", async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(404).send(error.message);
 
-  let user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send("Invalid email or password");
+  // console.log(req.body);
 
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(400).send("Invalid email or password");
+  try {
+    let user = await User.findOne({ email: req.body.email });
+    if (!user) return res.status(400).send("Invalid email or password");
 
-  const token = user.generateAuthToken();
-  res
-    .cookie("token", token, { httpOnly: true })
-    .send(_.pick(user, ["id", "name", "email"]));
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (!validPassword)
+      return res.status(400).send("Invalid email or password");
+
+    // console.log({ user });
+    const token = user.generateAuthToken();
+    res
+      .cookie("token", token, { httpOnly: true })
+      .send(_.pick(user, ["id", "name", "email"]));
+  } catch (err) {
+    res.status(500).send("Something went wrong");
+  }
 });
 
 router.get("/loggedin", async (req, res) => {
@@ -29,7 +41,7 @@ router.get("/loggedin", async (req, res) => {
 
   if (!token) return res.status(200).json(false);
   try {
-    jwt.verify(token, config.get("jwtPrivateKey"));
+    jwt.verify(token, process.env.JWT_SECRET);
     res.send(true);
   } catch (err) {
     res.status(200).json(false);

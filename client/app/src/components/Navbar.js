@@ -34,12 +34,12 @@ function Navbar() {
               <li>
                 <Link to="/addfarm">Add Farm</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/weather">Weather</Link>
               </li>
               <li>
                 <Link to="/recommendations">Recommendations</Link>
-              </li>
+              </li> */}
             </>
           )}
         </ul>

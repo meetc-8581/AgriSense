@@ -8,7 +8,7 @@ function Avatar() {
   const { getLoggedIn } = useContext(AuthContext);
 
   async function Logout() {
-    await axios.get("http://localhost:5000/api/login/logout");
+    await axios.get("/login/logout");
     getLoggedIn();
   }
 

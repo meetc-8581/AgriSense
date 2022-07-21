@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Register.css";
 import AuthContext from "../../context/AuthContext";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 function Register() {
   const [name, setName] = useState("");
@@ -23,7 +24,7 @@ function Register() {
         password,
       };
 
-      await axios.post("http://localhost:5000/api/users", registerData);
+      await axios.post("/users", registerData);
       await getLoggedIn();
       history.push("/");
     } catch (err) {
@@ -84,10 +85,10 @@ function Register() {
       </div>
       <div className="page-title">
         Already Registered?
-        <a style={{ textDecoration: "underline" }} href="login">
+        <Link style={{ textDecoration: "underline" }} to="login">
           {" "}
           Login
-        </a>
+        </Link>
       </div>
     </div>
   );
