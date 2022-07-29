@@ -42,9 +42,9 @@ function Router() {
             <Route path="/weather">
               <Weather />
             </Route>
-            <Route path="/recommendations">
+            {/* <Route path="/recommendations">
               <Recommendations />
-            </Route>
+            </Route> */}
           </>
         )}
       </Switch>

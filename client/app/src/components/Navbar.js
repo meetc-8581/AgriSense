@@ -31,13 +31,14 @@ function Navbar() {
               <li>
                 <Link to="/dashboard">Dashboard</Link>
               </li>
+
+              <li>
+                <Link to="/weather">Weather</Link>
+              </li>
               <li>
                 <Link to="/addfarm">Add Farm</Link>
               </li>
               {/* <li>
-                <Link to="/weather">Weather</Link>
-              </li>
-              <li>
                 <Link to="/recommendations">Recommendations</Link>
               </li> */}
             </>

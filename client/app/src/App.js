@@ -6,7 +6,7 @@ axios.defaults.withCredentials = true;
 
 function App() {
   console.log(process.env.NODE_ENV);
-  axios.defaults.baseURL = "/api/";
+  axios.defaults.baseURL = "http://localhost:5000/api/";
   return (
     <AuthContextProvider>
       <Router />
